@@ -32,12 +32,12 @@
     </parent>
 
     <properties>
-        <cxf.module.name>org.apache.cxf.tracing.opentelemetry</cxf.module.name>
-        <cxf.osgi.export>
-            org.apache.cxf.tracing,
-            org.apache.cxf.tracing.opentelemetry,
-            org.apache.cxf.tracing.opentelemetry.jaxrs
-        </cxf.osgi.export>
+        <cxf.module.name>org.apache.cxf.rs.swagger</cxf.module.name>
+        <cxf.osgi.import>
+            jakarta.servlet*;version="${cxf.osgi.jakarta.servlet.version}",
+            jakarta.annotation;version="${cxf.osgi.jakarta.annotation.version}",
+            jakarta.validation*;resolution:=optional;version="${cxf.validation.api.package.version}",
+        </cxf.osgi.import>
     </properties>
 
     <dependencies>
@@ -68,42 +68,14 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-management</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry.semconv</groupId>
-            <artifactId>opentelemetry-semconv</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry.semconv</groupId>
-            <artifactId>opentelemetry-semconv-incubating</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-sdk-testing</artifactId>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

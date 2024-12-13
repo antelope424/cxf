@@ -37,7 +37,8 @@
             org.apache.cxf.tools.validator.*,
         </cxf.osgi.export>
         <cxf.osgi.import>
-            jakarta.jws*;version="${cxf.osgi.jakarta.jwsapi.version}"
+            jakarta.jws*;version="${cxf.osgi.jws.version}",
+            jakarta.xml.bind*;version="${cxf.osgi.jakarta.bind.version}"
         </cxf.osgi.import>
     </properties>
     <dependencies>
@@ -85,4 +86,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>${cxf.osgi.export}</Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

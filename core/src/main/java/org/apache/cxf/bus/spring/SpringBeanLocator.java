@@ -78,8 +78,7 @@ public class SpringBeanLocator implements ConfiguredBeanLocator {
                 ((ExtensionManagerImpl)orig).removeBeansOfNames(names);
             }
         }
-        //TODO: [OSGi+Jakarta] Uncomment this when osgi comes back
-        //loadOSGIContext(bus);
+        loadOSGIContext(bus);
     }
 
     private void loadOSGIContext(Bus b) {

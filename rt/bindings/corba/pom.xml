@@ -34,6 +34,7 @@
         <cxf.module.name>org.apache.cxf.binding.corba</cxf.module.name>
         <cxf.checkstyle.extension>-corba</cxf.checkstyle.extension>
         <cxf.osgi.import>
+            org.objectweb.asm*;version="${cxf.osgi.asm.version}",
             jakarta.xml.ws*;version="${cxf.osgi.jakarta.xml.ws.version}",
             jakarta.annotation*;version="${cxf.osgi.jakarta.annotation.version}",
             jakarta.xml.bind*;version="${cxf.osgi.jakarta.bind.version}",

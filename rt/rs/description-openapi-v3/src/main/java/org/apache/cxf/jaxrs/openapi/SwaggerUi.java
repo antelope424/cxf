@@ -18,6 +18,8 @@
  */
 
 package org.apache.cxf.jaxrs.openapi;
+
+import org.apache.cxf.jaxrs.swagger.ui.OsgiSwaggerUiResolver;
 import org.apache.cxf.jaxrs.swagger.ui.SwaggerUiResolver;
 
 
@@ -29,13 +31,11 @@ public final class SwaggerUi {
     
     static {
         SwaggerUiResolver theHelper;
-        //TODO: [OSGi+Jakarta] uncomment this when osgi comes back
-        /*try {
+        try {
             theHelper = new OsgiSwaggerUiResolver(OpenAPIDefinition.class);
         } catch (Throwable ex) {
             theHelper = new SwaggerUiResolver(OpenApiFeature.class.getClassLoader());
-        }*/
-        theHelper = new SwaggerUiResolver(OpenApiFeature.class.getClassLoader());
+        }
         HELPER = theHelper;
     }
 

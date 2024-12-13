@@ -25,8 +25,8 @@
     <properties>
         <cxf.spi-dir>spi-2.1</cxf.spi-dir>
         <cxf.osgi.import>
-            jakarta.jms;version="${cxf.osgi.jakarta.jms.version}",
-            jakarta.transaction;version="${cxf.osgi.jakarta.transaction.version}",
+            jakarta.jms;version="[3,4)",
+            javax.transaction;version="[2,3)",
             jakarta.xml.bind*;version="${cxf.osgi.jakarta.bind.version}"
         </cxf.osgi.import>
         <cxf.module.name>org.apache.cxf.transport.jms</cxf.module.name>
@@ -75,9 +75,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <scope>test</scope>
+        	<groupId>org.awaitility</groupId>
+        	<artifactId>awaitility</artifactId>
+        	<scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
